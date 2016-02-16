@@ -1,6 +1,5 @@
 <h2>springboot+bootstrap+angluarjs</h2></br>
-JAVA8
-</br>
+
 开发进度与感受:</br>
 
 目前 HIBERANTE QUERY CACHE | SECOND LEVLE CACHE都使用了 REDIS</br>
