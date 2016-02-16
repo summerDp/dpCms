@@ -6,6 +6,7 @@ JAVA8
 目前 HIBERANTE QUERY CACHE | SECOND LEVLE CACHE都使用了 REDIS</br>
 SO 为了方便开发, 大家可以下载大微软的REDIS2.8+版本:</br>
 https://github.com/MSOpenTech/redis/releases</br>
+
 桌面管理工具:</br>
 http://redisdesktop.com/download</br>
 
