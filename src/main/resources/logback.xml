@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-    <include resource="org/springframework/boot/logging/logback/base.xml" />
+	<include resource="org/springframework/boot/logging/logback/base.xml" />
 	<!-- 控制器输出地 -->
 	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
 		<layout class="ch.qos.logback.classic.PatternLayout">
@@ -46,8 +46,9 @@
 	</appender>
 
 	<!-- 日志级别 TRACE、DEBUG、INFO、WARN ERROR -->
-	<logger name="org.pushio" level="INFO" />
-
+	<logger name="org.apache" level="DEBUG" />
+	<logger name="org.summer" level="INFO" />
+	
 	<!-- 根日志输出配置 -->
 	<root level="INFO">
 		<appender-ref ref="STDOUT" />

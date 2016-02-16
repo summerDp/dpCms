@@ -10,6 +10,8 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import org.apache.log4j.Logger;
+import org.apache.shiro.authc.credential.DefaultPasswordService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
@@ -34,11 +36,9 @@ import org.summer.dp.cms.vo.CurrentInfo;
 @Service("accountService")
 public class AccountService {
 	private static final Logger logger = Logger.getLogger(AccountService.class);
-	@Resource
-	AccountRepository accountRepository;
-
-	@Resource
-	EmployeeRepository employeeRepository;
+	@Resource AccountRepository accountRepository;
+	@Resource EmployeeRepository employeeRepository;
+	@Autowired private DefaultPasswordService passwordService;
 
 	@PersistenceContext 
 	private EntityManager em;
@@ -147,7 +147,7 @@ public class AccountService {
 		if((account = employee.getAccount()) != null){//已经存在帐号，那么就激活它
 			if(account.getStatus()==0){ // 未激活
 				account.setStatus(1);
-				account.setPassword(MD5.MD5(pwd));
+				account.setPassword(passwordService.encryptPassword(pwd));
 				employee.setAccount(account);
 				employeeRepository.save(employee);
 				pinyinName = Pinyin4jUtil.toHanyuPinyin(employee.getName());

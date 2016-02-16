@@ -8,7 +8,7 @@
 	<packaging>war</packaging>
 
 	<name>spring-boot-samples</name>
-	<url>http://pushio.org/</url>
+	<url>http://summerDp.org/</url>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -18,33 +18,56 @@
 
 	<build>
 		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-eclipse-plugin</artifactId>
-			</plugin>
-		</plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>aspectj-maven-plugin</artifactId>
+                <version>1.7</version>
+                <configuration>
+                    <complianceLevel>${java.version}</complianceLevel>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <aspectLibraries>
+                        <aspectLibrary>
+                            <groupId>org.apache.shiro</groupId>
+                            <artifactId>shiro-aspectj</artifactId>
+                        </aspectLibrary>
+                    </aspectLibraries>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.aspectj</groupId>
+                        <artifactId>aspectjrt</artifactId>
+                        <version>${aspectj.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.aspectj</groupId>
+                        <artifactId>aspectjtools</artifactId>
+                        <version>${aspectj.version}</version>
+                    </dependency>
+                </dependencies>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
 	</build>
 	<properties>
-		<!-- <jetty.version>8.1.15.v20140411</jetty.version> -->
-		<!-- <jetty-jsp.version>2.2.0.v201112011158</jetty-jsp.version> -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<start-class>com.naturalprogrammer.spring.email.NaturalprogrammerSpringEmailApplication</start-class>
 		<java.version>1.8</java.version>
 		<tomcat.version>8.0.32</tomcat.version>
+		<!-- dependencies -->
 		<commons-codec.version>1.10</commons-codec.version>
 		<commons-lang3.version>3.4</commons-lang3.version>
 		<commons-lang.version>2.6</commons-lang.version>
 		<commons-beanutils.version>1.7.0</commons-beanutils.version>
 		<freemarker.version>2.3.19</freemarker.version>
 		<pinyin4j.version>2.5.0</pinyin4j.version>
+		<hazelcast.version>3.6</hazelcast.version>
+		<shiro.version>1.2.4</shiro.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -168,30 +191,37 @@
 			<artifactId>spring-session</artifactId>
 			<version>1.0.2.RELEASE</version>
 		</dependency>
-
+		
 		<dependency>
-			<groupId>org.springframework.data</groupId>
-			<artifactId>spring-data-redis</artifactId>
-			<version>1.6.2.RELEASE</version>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-spring</artifactId>
+			<version>${shiro.version}</version>
 		</dependency>
 
-	    <dependency>
-            <groupId>org.apache.shiro</groupId>
-            <artifactId>shiro-spring</artifactId>
-            <version>1.2.4</version>
-        </dependency>
-        
-        <dependency>
-            <groupId>org.apache.shiro</groupId>
-            <artifactId>shiro-cas</artifactId>
-            <version>1.2.4</version>
-        </dependency>
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-aspectj</artifactId>
+			<version>${shiro.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-cas</artifactId>
+			<version>${shiro.version}</version>
+		</dependency>
 
 		<!-- google kaptcha 图片验证码 -->
 		<dependency>
 			<groupId>com.github.axet</groupId>
 			<artifactId>kaptcha</artifactId>
 			<version>0.0.9</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.hazelcast</groupId>
+			<artifactId>hazelcast</artifactId>
+			<version>${hazelcast.version}</version>
 		</dependency>
 
 	</dependencies>
@@ -227,6 +257,17 @@
 		<repository>
 			<id>debop-releases-bintray</id>
 			<url>http://dl.bintray.com/debop/maven</url>
+		</repository>
+		<repository>
+			<id>sonatype-snapshots</id>
+			<name>Sonatype Snapshot Repository</name>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
 		</repository>
 	</repositories>
 

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="utf-8">
-<title>PUSHIO</title>
+<title>dpCms</title>
 <meta http-equiv="Expires" content="0">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Cache-control" content="no-cache">
@@ -21,12 +21,12 @@
 </head>
 <body>
 	<div class="page-container">
-	    <h1>PUSHIO功能演示</h1>
-		<h1>登录</h1>
+	    <h1>dpCms功能演示</h1>
+	    <h1>用HTML5哦</h1>
 		<form>
 			<input type="text" name="username" class="username"
-				placeholder="测试帐号为:PUSHIO"> <input type="password"
-				name="password" class="password" placeholder="测试密码为:PUSHIO"> <input
+				placeholder="测试帐号为:admin"> <input type="password"
+				name="password" class="password" placeholder="测试密码为:admin"> <input
 				type="Captcha" class="Captcha" name="loginCode"
 				placeholder="请输入验证码！"> <img src="imgcode" id="captchaImg" />
 			<div class="errorresult"></div>
@@ -75,11 +75,11 @@
 				return false;
 			}
 			$.ajax({
-				url : "login.do?",
+				url : "login?",
 				type : "post",
 				data : $("form").serialize(),
 				success : function(data) {
-					var resultNum = parseInt(data.errorcode);
+					var resultNum = parseInt(data.stateCode);
 					if (resultNum == 1) {
 						var uri = data.data;
 						location.href = uri;
