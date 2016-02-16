@@ -24,9 +24,9 @@ import org.summer.dp.cms.support.Fastjson2HttpMessageConverter;
 @EnableAutoConfiguration
 @EnableTransactionManagement
 @EnableRedisHttpSession
-@ComponentScan("org.summer.dp.webapp")
-@EntityScan("org.summer.dp.webapp.entity")
-@EnableJpaRepositories("org.summer.dp.webapp.repository")
+@ComponentScan("org.summer.dp.cms")
+@EntityScan("org.summer.dp.cms.entity")
+@EnableJpaRepositories("org.summer.dp.cms.repository")
 public class Start extends WebMvcConfigurerAdapter{
 
 		
