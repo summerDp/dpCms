@@ -1,5 +1,5 @@
 dpCms结构:</br>
-<h2>bootstrap+angluarjs+springboot+hibernate_jpa</h2></br>
+<h2>springboot+bootstrap+angluarjs</h2></br>
 JAVA8
 </br>
 开发进度与感受:</br>
