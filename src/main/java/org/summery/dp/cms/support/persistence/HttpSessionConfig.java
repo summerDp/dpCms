@@ -1,0 +1,6 @@
+package org.summery.dp.cms.support.persistence;
+
+import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;
+
+//@EnableRedisHttpSession 
+public class HttpSessionConfig { }

@@ -1,0 +1,2 @@
+1 单元测试类继承JunitEntityManagerHolder就可以维持HIBERNATE的SESSION
+
