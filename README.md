@@ -12,3 +12,6 @@ http://redisdesktop.com/download</br>
 登录加入了SHIRO</br>
 SESSIONDAO实现使用Hazelcast,感谢GTIHUB众多优秀的代码让我抄</br>
 
+项目演示地址哦:
+http://www.zhaobaodong.space/  谁给个证书我上HTTPS呀
+
