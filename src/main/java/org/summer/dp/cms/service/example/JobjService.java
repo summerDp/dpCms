@@ -91,36 +91,36 @@ public class JobjService {
 
 	}
 
-	public static void main(String[] args) {
-		JobjService jService = new JobjService();
-		jService.makeTestData2Obj();
-		jService.printData();
-
-		System.out.println("developers : "
-				+ JsonUtil.toJSONString(jService.getObj("developers")));
-		System.out.println("developers.0 : "
-				+ JsonUtil.toJSONString(jService.getObj("developers.0")));
-		System.out.println("developers.0.name : "
-				+ JsonUtil.toJSONString(jService.getObj("developers.0.name")));
-		
-		System.out.println("developers.1 : "
-				+ JsonUtil.toJSONString(jService.getObj("developers.1")));
-		System.out.println("developers.1.name : "
-				+ JsonUtil.toJSONString(jService.getObj("developers.1.name")));
-		
-		System.out.println("developers.2 : "
-				+ JsonUtil.toJSONString(jService.getObj("developers.2")));
-		System.out.println("developers.2.name : "
-				+ JsonUtil.toJSONString(jService.getObj("developers.2.name")));
-		
-		//
-		// System.out.println("devInfo.dbDesign : "
-		// +JsonUtil.toJSONString(jService.getObj("devInfo.dbDesign")));
-		// System.out.println("version : "
-		// +JsonUtil.toJSONString(jService.getObj("version")));
-		//
-		// String json =
-		// JsonUtil.toJSONString(jService.getObj("devInfo.dbDesign.dbName"));
-		// System.out.println("rjson=" + json);
-	}
+//	public static void main(String[] args) {
+//		JobjService jService = new JobjService();
+//		jService.makeTestData2Obj();
+//		jService.printData();
+//
+//		System.out.println("developers : "
+//				+ JsonUtil.toJSONString(jService.getObj("developers")));
+//		System.out.println("developers.0 : "
+//				+ JsonUtil.toJSONString(jService.getObj("developers.0")));
+//		System.out.println("developers.0.name : "
+//				+ JsonUtil.toJSONString(jService.getObj("developers.0.name")));
+//		
+//		System.out.println("developers.1 : "
+//				+ JsonUtil.toJSONString(jService.getObj("developers.1")));
+//		System.out.println("developers.1.name : "
+//				+ JsonUtil.toJSONString(jService.getObj("developers.1.name")));
+//		
+//		System.out.println("developers.2 : "
+//				+ JsonUtil.toJSONString(jService.getObj("developers.2")));
+//		System.out.println("developers.2.name : "
+//				+ JsonUtil.toJSONString(jService.getObj("developers.2.name")));
+//		
+//		//
+//		// System.out.println("devInfo.dbDesign : "
+//		// +JsonUtil.toJSONString(jService.getObj("devInfo.dbDesign")));
+//		// System.out.println("version : "
+//		// +JsonUtil.toJSONString(jService.getObj("version")));
+//		//
+//		// String json =
+//		// JsonUtil.toJSONString(jService.getObj("devInfo.dbDesign.dbName"));
+//		// System.out.println("rjson=" + json);
+//	}
 }

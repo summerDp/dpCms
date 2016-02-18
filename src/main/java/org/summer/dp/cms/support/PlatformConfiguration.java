@@ -31,14 +31,14 @@ public class PlatformConfiguration {
 		return smsConfiguration ; 
 	}
 
-	public static void main(String[] args){
-		while ( true ){
-			System.out.println(PlatformConfiguration.config.getString("basePath"));
-			try {
-				TimeUnit.SECONDS.sleep(8);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-		}
-	}
+//	public static void main(String[] args){
+//		while ( true ){
+//			System.out.println(PlatformConfiguration.config.getString("basePath"));
+//			try {
+//				TimeUnit.SECONDS.sleep(8);
+//			} catch (InterruptedException e) {
+//				e.printStackTrace();
+//			}
+//		}
+//	}
 }

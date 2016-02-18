@@ -2,10 +2,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>org.pushio</groupId>
-	<artifactId>push-cms</artifactId>
+	<groupId>org.summerdp</groupId>
+	<artifactId>dpcms</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 
 	<name>spring-boot-samples</name>
 	<url>http://summerDp.org/</url>
@@ -19,36 +19,13 @@
 	<build>
 		<plugins>
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>aspectj-maven-plugin</artifactId>
-                <version>1.7</version>
-                <configuration>
-                    <complianceLevel>${java.version}</complianceLevel>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
-                    <aspectLibraries>
-                        <aspectLibrary>
-                            <groupId>org.apache.shiro</groupId>
-                            <artifactId>shiro-aspectj</artifactId>
-                        </aspectLibrary>
-                    </aspectLibraries>
-                </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.aspectj</groupId>
-                        <artifactId>aspectjrt</artifactId>
-                        <version>${aspectj.version}</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.aspectj</groupId>
-                        <artifactId>aspectjtools</artifactId>
-                        <version>${aspectj.version}</version>
-                    </dependency>
-                </dependencies>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>1.3.2.RELEASE</version>
                 <executions>
                     <execution>
                         <goals>
-                            <goal>compile</goal>
+                            <goal>repackage</goal>
                         </goals>
                     </execution>
                 </executions>
@@ -68,6 +45,7 @@
 		<pinyin4j.version>2.5.0</pinyin4j.version>
 		<hazelcast.version>3.6</hazelcast.version>
 		<shiro.version>1.2.4</shiro.version>
+		<start-class>org.summer.dp.cms.Start</start-class>  
 	</properties>
 	<dependencies>
 		<dependency>

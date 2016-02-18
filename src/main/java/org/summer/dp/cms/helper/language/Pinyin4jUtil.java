@@ -71,9 +71,5 @@ public class Pinyin4jUtil {
 		return password.toString();
 	}
 
-	public static void main(String[] args) {
-		System.out.println(Pinyin4jUtil.toHanyuPinyin("曾娇俏"));
-		System.out.println(genRandomPassword());
-	}
 
 }

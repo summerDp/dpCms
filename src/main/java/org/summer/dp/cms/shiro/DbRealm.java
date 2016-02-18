@@ -125,10 +125,10 @@ public class DbRealm extends AuthorizingRealm {
 		}
 	}
 	
-	public static void main(String[] args){
-		DefaultPasswordService defaultPasswordService = new DefaultPasswordService();
-		System.out.println(defaultPasswordService.encryptPassword("admin"));
-	}
+//	public static void main(String[] args){
+//		DefaultPasswordService defaultPasswordService = new DefaultPasswordService();
+//		System.out.println(defaultPasswordService.encryptPassword("admin"));
+//	}
 }
 
 

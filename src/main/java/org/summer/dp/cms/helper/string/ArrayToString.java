@@ -49,18 +49,18 @@ public class ArrayToString<T>{
 	}
 
 
-
-	public static void main(String[] args) {
-		String[] strArray = {"1","2"};
-		Long[] longArray = {1l,2l,3l,4l};
-		ArrayList<String> list = new ArrayList<String>();
-		list.add("a");
-		list.add("b");
-		list.add("c");
-		System.out.println(ArrayToString.toString(strArray));
-		System.out.println(ArrayToString.toString(longArray));
-		System.out.println(ArrayToString.toString(list));
-		System.out.println(ArrayToString.toString(longArray,"in "));
-	}
+//
+//	public static void main(String[] args) {
+//		String[] strArray = {"1","2"};
+//		Long[] longArray = {1l,2l,3l,4l};
+//		ArrayList<String> list = new ArrayList<String>();
+//		list.add("a");
+//		list.add("b");
+//		list.add("c");
+//		System.out.println(ArrayToString.toString(strArray));
+//		System.out.println(ArrayToString.toString(longArray));
+//		System.out.println(ArrayToString.toString(list));
+//		System.out.println(ArrayToString.toString(longArray,"in "));
+//	}
 
 }

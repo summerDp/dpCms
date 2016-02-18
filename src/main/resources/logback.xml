@@ -46,7 +46,7 @@
 	</appender>
 
 	<!-- 日志级别 TRACE、DEBUG、INFO、WARN ERROR -->
-	<logger name="org.apache" level="DEBUG" />
+	<logger name="org.apache" level="INFO" />
 	<logger name="org.summer" level="INFO" />
 	
 	<!-- 根日志输出配置 -->
