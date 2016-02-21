@@ -72,13 +72,13 @@ public class LoginController {
 	 */
 	@RequestMapping(value = "/login")
 	@ResponseBody
-	public Response login(String username, String password, String loginCode , Response response ) {
+	public Response login(String username, String password, String logincode , Response response ) {
 		String msg = "";
 		Subject currentUser = SecurityUtils.getSubject();
 		Session session = currentUser.getSession();
 		String codeSession = (String) session.getAttribute(Constants.KAPTCHA_SESSION_KEY);
-		if (StringUtils.isBlank(loginCode) || StringUtils.isBlank(codeSession)
-				|| !loginCode.equals(codeSession)) {
+		if (StringUtils.isBlank(logincode) || StringUtils.isBlank(codeSession)
+				|| !logincode.equals(codeSession)) {
 			response.setStateCode(StateCode.LOGIN_FAIL);
 			msg = "验证码不正确,朋友！";
 		} else {
