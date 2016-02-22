@@ -110,10 +110,10 @@ public class AccountService {
 	public Account save(Account account, CurrentInfo currentInfo){
 		if(account.getId()==null){
 			account.setAddDate(new Date());
-			account.setEmployeeByAddUserId(currentInfo.getEmplpyee());
+			account.setEmployeeByAddUserId(currentInfo.getEmployee());
 		}else{
 			account.setModifyDate(new Date());
-			account.setEmployeeByModifyUserId(currentInfo.getEmplpyee());
+			account.setEmployeeByModifyUserId(currentInfo.getEmployee());
 		}
 
 		account  =  accountRepository.save(account);
@@ -170,7 +170,7 @@ public class AccountService {
 			account = new Account();
 			account.setLoginName(pinyinName);
 			account.setPassword(MD5.MD5(pwd));
-			account.setEmployeeByAddUserId(currentInfo.getEmplpyee());
+			account.setEmployeeByAddUserId(currentInfo.getEmployee());
 			account.setStatus(1);
 			account.setAddDate(new Date());
 			account = accountRepository.save(account);

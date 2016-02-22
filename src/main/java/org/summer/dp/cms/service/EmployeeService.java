@@ -102,10 +102,10 @@ public class EmployeeService {
 	public Employee save(Employee employee, CurrentInfo currentInfo){
 		if(employee.getId()==null){
 			employee.setAddDate(new Date());
-			employee.setEmployeeByAddUserId(currentInfo.getEmplpyee());
+			employee.setEmployeeByAddUserId(currentInfo.getEmployee());
 		}else{
 			employee.setModifyDate(new Date());
-			employee.setEmployeeByModifyUserId(currentInfo.getEmplpyee());
+			employee.setEmployeeByModifyUserId(currentInfo.getEmployee());
 		}
 
 		employee  =  employeeRepository.save(employee);

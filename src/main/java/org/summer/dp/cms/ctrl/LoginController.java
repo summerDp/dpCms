@@ -59,7 +59,7 @@ public class LoginController {
 	@Autowired private CurrentUserInfoService currentUserInfoService;
 	@Autowired private StringRedisTemplate redisTemplate;//只有STRING 序列化成JSON用着先,等出稳定版 
 
-	
+
 
 	/**
 	 * 
@@ -89,7 +89,7 @@ public class LoginController {
 				account.setPassword("");
 				// 获取当前登录用户的岗位信息。
 				CurrentInfo currentInfo = currentUserInfoService.findCurrentUserInfo(account);
-				Employee emplpyee = currentInfo.getEmplpyee();
+				Employee emplpyee = currentInfo.getEmployee();
 				if (emplpyee == null || emplpyee.getDefaultPostId() == null) {
 					throw new AccountNoActiceException();
 				}
@@ -108,7 +108,7 @@ public class LoginController {
 						currentInfo.setIndexPage(post.getIndexPage());// 保存到SESSION里，快速获取
 						currentUser.getSession().setAttribute("currentInfo", currentInfo);
 						response.setStateCode(StateCode.OK);
-						response.setData("success.html");// 把该人应该跳转的页面返回到客户端
+						response.setData("index.html");// 把该人应该跳转的页面返回到客户端
 					}
 				}
 
@@ -140,7 +140,7 @@ public class LoginController {
 		return response;
 	}
 
-	
+
 	/**
 	 * 获取登录的图片验证码
 	 */
@@ -211,9 +211,16 @@ public class LoginController {
 		return response;
 	}
 
-	@RequestMapping(value = "/loginPage")
-	public String loginPage(HttpSession session) {
-		return "account/login";
+	@RequestMapping(value = "/getMenuAndUserName")
+	@ResponseBody
+	public Response isLogin(HttpSession session,Response response) {
+		Subject currentUser = SecurityUtils.getSubject();
+		if(currentUser.isAuthenticated()){
+			CurrentInfo currentInfo = (CurrentInfo) currentUser.getSession().getAttribute("currentInfo");
+			response.setFieldPaths(new String[]{"menus","permissions","employee"});
+			response.setData(currentInfo);
+		}else{response.setData(false);}
+		return response;
 	}
 
 }
