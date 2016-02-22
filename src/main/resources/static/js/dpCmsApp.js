@@ -1,0 +1,1 @@
+var dpCmsApp = angular.module('dpCmsApp', ['ngMaterial']);
