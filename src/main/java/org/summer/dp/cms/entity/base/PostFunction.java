@@ -26,7 +26,6 @@ public class PostFunction implements java.io.Serializable {
 	private Long id;
 	private Function function;
 	private Post post;
-	private Integer isMenu;
 
 	public PostFunction() {
 	}
@@ -36,11 +35,6 @@ public class PostFunction implements java.io.Serializable {
 		this.post = post;
 	}
 
-	public PostFunction(Function function, Post post, Integer isMenu) {
-		this.function = function;
-		this.post = post;
-		this.isMenu = isMenu;
-	}
 
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
@@ -71,15 +65,6 @@ public class PostFunction implements java.io.Serializable {
 
 	public void setPost(Post post) {
 		this.post = post;
-	}
-
-	@Column(name = "IS_MENU")
-	public Integer getIsMenu() {
-		return this.isMenu;
-	}
-
-	public void setIsMenu(Integer isMenu) {
-		this.isMenu = isMenu;
 	}
 
 }

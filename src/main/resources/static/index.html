@@ -1,33 +1,48 @@
 <!DOCTYPE html>
-<html >
+<html>
 <head>
 <meta charset="UTF-8">
-<title>dpcms登录页面</title>
-
-<link rel="stylesheet" href="css/normalize.css">
-<link rel="stylesheet" href="css/login.css">
-
+<title>dpCms工作台</title>
+<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="css/angular-material.min.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
+<html>
+<body ng-app="dpCmsApp"  ng-controller = "indexCtrl"  ng-cloak>
 
-<body>
-    <div style="text-align:center;">
-	<h1>源码:<a href="https://github.com/summerDp/dpCms">https://github.com/summerDp/dpCms</a></h1>
+	<div flex layout="cloumn" style="height: 10%;">
+		<dp-top layout="row" md-is-locked-open='true'>
+		{{userName}} 你好热烈欢迎你登录本系统 </dp-top>
 	</div>
-<div class="login">
-	<h1>DPCMS登录</h1>
+	<div flex layout="row" style="height: 90%;">
+		<dp-left layout="column" md-is-locked-open='true'>
+		<li>高智能菜单</li>
+		<li>机构管理</li>
+		<li>部门管理</li>
+		</dp-left>
 
-	<form method="post" autocomplete="off">
-		<input type="text" name="u" placeholder="admin" required="required" />
-		<input type="password" name="p" placeholder="admin" required="required" />
-		<button type="submit" class="btn btn-primary btn-block btn-large">登录</button>
-	</form>
-</div>
+		<dp-right flex layout="column"> <ng-view>
+		大家好我是DPCMS工作区</ng-view> </dp-right>
+	</div>
 
+	<!-- Angular Material requires Angular.js Libraries -->
+	<script src="js/angular/angular.min.js"></script>
+	<script src="js/angular/angular-animate.min.js"></script>
+	<script src="js/angular/angular-aria.min.js"></script>
+
+	<!-- Angular Material Library -->
+	<script src="js/angular/material/angular-material.min.js"></script>
+
+	<!-- Your application bootstrap  -->
 </body>
-<script src="js/angular/angular.min.js"></script>
-<script src="js/angular/angular-animate.min.js"></script>
-<script src="js/angular/angular-aria.min.js"></script>
-<script src="js/angular/angular-messages.min.js"></script>
-<script src="js/angular/material/angular-material.min.js"></script>
-<script src="js/login.js"></script>
 </html>
+
+<script src="js/dpCmsApp.js"></script>
+<script src="js/controller/index.js"></script>
+<script src="js/service/checkLoginService.js"></script>
+<div ng-init="checkLoginState()" ></div>  
+</body>
+</html>
+
+
+

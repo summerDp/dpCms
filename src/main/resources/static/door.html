@@ -1,105 +1,31 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="en" class="no-js">
-
+<!DOCTYPE html>
+<html >
 <head>
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta charset="utf-8">
-<title>dpCms</title>
-<meta http-equiv="Expires" content="0">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Cache-control" content="no-cache">
-<meta http-equiv="Cache" content="no-cache">
-<!-- CSS -->
-<link rel="stylesheet" type="text/css" href="css/function/login.css" />
+<meta charset="UTF-8">
+<title>dpcms登录页面</title>
 
-<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-<!--[if lt IE 9]>
-            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/login.css">
 
 </head>
-<body>
-     <h1>dpCms功能演示</h1>
-	 <h1>源码在:<a href="https://github.com/summerDp/dpCms">https://github.com/summerDp/dpCms</a></h1>
-	<div class="page-container">
-		<form>
-			<input type="text" name="username" class="username"
-				placeholder="测试帐号为:admin"> <input type="password"
-				name="password" class="password" placeholder="测试密码为:admin"> <input
-				type="Captcha" class="Captcha" name="loginCode"
-				placeholder="请输入验证码！"> <img src="imgcode" id="captchaImg" />
-			<div class="errorresult"></div>
-			<button type="button" class="submit_button">登录</button>
-			<label> <a href="">注册</a>
-			</label>
 
-		</form>
+<body ng-app="dpCms" ng-controller="loginCtrl">
+    <div style="text-align:center;">
+	<h1>源码:<a href="https://github.com/summerDp/dpCms">https://github.com/summerDp/dpCms</a></h1>
 	</div>
+<div class="login">
+	<h1>DPCMS登录</h1>
 
-	<!-- Javascript -->
-	<script src="js/lib/jQuery/jquery.min.js" type="text/javascript"
-		charset="utf-8"></script>
-	<script src="js/function/login/login.min.js" type="text/javascript"
-		charset="utf-8"></script>
-	<script src="js/function/login/login-init.js" type="text/javascript"
-		charset="utf-8"></script>
-	<script type="text/javascript">
-		$(".submit_button").click(function() {
-			submitForm();
-		});
-		$(document).keyup(function(event) {
-			if (event.keyCode == 13) {
-				submitForm();
-			}
-		});
-		$(".page-container img").on("click", function() {
-			$(this).prop("src", "imgcode?" + Math.random());
-		});
+	<form autocomplete="off" ng-submit="processForm()">
+		<input type="text" name="username" placeholder="admin" required="required" ng-model="formData.username"/>
+		<input type="password" name="password" placeholder="admin" required="required" ng-model="formData.password"/>
+		<input type="text" name="logincode" required="required" placeholder="请输入验证码!" ng-model="formData.logincode"/>
+		<img ng-src="{{ imgCodeSrc }}" ng-click="changeImgCode()" />
+		<button type="submit" class="btn btn-primary btn-block btn-large">登录</button>　 {{msg}}
+	</form>
+</div>
 
-		function submitForm() {
-			//alert($.trim($(".username").val()).length);
-			if ($.trim($(".username").val()).length < 1) {
-				$(".errorresult").html("请输入用户名！");
-				$(".username").focus();
-				return false;
-			}
-			if ($.trim($(".password").val()).length < 1) {
-				$(".errorresult").html("请输入密码！");
-				$(".password").focus();
-				return false;
-			}
-			if ($.trim($(".Captcha").val()).length < 1) {
-				$(".errorresult").html("请输入验证码！");
-				$(".Captcha").focus();
-				return false;
-			}
-			$.ajax({
-				url : "login?",
-				type : "post",
-				data : $("form").serialize(),
-				success : function(data) {
-					var resultNum = parseInt(data.stateCode);
-					if (resultNum == 1) {
-						var uri = data.data;
-						location.href = uri;
-					} else {
-						$(".errorresult").html(data.message);
-						$(".Captcha").focus();
-						$(".page-container img").prop("src",
-								"imgcode?" + Math.random());
-					}
-				},
-				cache : false,
-				timeout : 5000,
-				error : function() {
-					$(".errorresult").html("登录时出错了！");
-					$(".page-container img").prop("src",
-							"imgcode?" + Math.random());
-				}
-			});
-		}
-	</script>
 </body>
-
+<script src="js/angular/angular.min.js"></script>
+<script src="js/controller/door.js"></script>
 </html>

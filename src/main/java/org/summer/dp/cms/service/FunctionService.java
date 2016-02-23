@@ -100,9 +100,4 @@ public class FunctionService {
 		return function;
 	}
 	
-	public Page<Function> findPage(Map<String, Object> searchParams, PageRequest pageRequest){
-		Map<String, SearchFilter> filters = SearchFilter.parse2Filter(searchParams);
-		Specification<Function> spec = DynamicSpecifications.bySearchFilter(filters.values(), Function.class);
-		return functionRepository.findAll(spec,pageRequest);
-	}
 }

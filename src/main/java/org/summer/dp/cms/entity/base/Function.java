@@ -32,6 +32,8 @@ public class Function implements java.io.Serializable {
 	private Long impler;
 	private String ctrlName;
 	private String jsUrl;
+	private byte isMenu;
+	private byte menuLevel;
 	private Set<PostFunction> postFunctions = new HashSet<PostFunction>(0);
 
 	public Function() {
@@ -143,4 +145,19 @@ public class Function implements java.io.Serializable {
 		this.postFunctions = postFunctions;
 	}
 
+	public byte getIsMenu() {
+		return isMenu;
+	}
+
+	public void setIsMenu(byte isMenu) {
+		this.isMenu = isMenu;
+	}
+
+	public byte getMenuLevel() {
+		return menuLevel;
+	}
+
+	public void setMenuLevel(byte menuLevel) {
+		this.menuLevel = menuLevel;
+	}
 }
