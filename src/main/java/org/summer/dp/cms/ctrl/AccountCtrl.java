@@ -8,7 +8,6 @@ import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.authc.credential.DefaultPasswordService;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -35,7 +34,6 @@ import org.summer.dp.cms.vo.CurrentInfo;
 @RestController
 @RequestMapping("/account")
 public class AccountCtrl extends BaseController{
-	
 	
 	@Autowired private AccountService accountService;
 	@Autowired private EmployeeService employeeService;
