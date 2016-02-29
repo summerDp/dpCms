@@ -17,19 +17,19 @@ public class BaseService<T> {
 
 	/**
 	 * 批量持久化
-	 * @param accountList
+	 * @param t
 	 */
 	@Transactional
 	public void saveBatch(List<T> accountList){
 		int i=0 ;
 		for(;i<accountList.size();i++){
 			em.persist(accountList.get(i));
-			if(i % 50 ==0){
+			if(i % 1000 ==0){
 				em.flush();
 				em.clear();
 			}
 		}
-		if(i%50!=0){
+		if(i%1000!=0){
 			em.flush();
 			em.clear();
 		}
@@ -38,19 +38,19 @@ public class BaseService<T> {
 
 	/**
 	 * 批量更新
-	 * @param accountList
+	 * @param t
 	 */
 	@Transactional
 	public void updateBatch(List<T> list){
 		int i=0 ;
 		for(;i<list.size();i++){
 			em.merge(list.get(i));
-			if(i % 50 ==0){
+			if(i % 1000 ==0){
 				em.flush();
 				em.clear();
 			}
 		}
-		if(i%50!=0){
+		if(i%1000!=0){
 			em.flush();
 			em.clear();
 		}
