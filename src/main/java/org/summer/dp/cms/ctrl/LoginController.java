@@ -64,7 +64,7 @@ public class LoginController {
 	/**
 	 * 
 	 * @Title: loginDo 
-	 * @Description: 全平台登录
+	 * @Description: 平台登录
 	 * @param @param username
 	 * @param @param password
 	 * @return Response 返回类型,如果成功返回跳转的URL
