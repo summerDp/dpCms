@@ -13,7 +13,7 @@ http://redisdesktop.com/download</br>
 SESSIONDAO实现使用Hazelcast,感谢GTIHUB众多优秀的代码让我抄</br>
 
 项目演示地址哦:</br>
-http://www.zhaobaodong.space/  谁给个证书我上HTTPS呀</br>
+https://www.zhaobaodong.space/  全站SSL升级完毕
 
 启动：</br>
 nohup /usr/local/jdk1.8.0_73/bin/java -jar dpcms-0.0.1-SNAPSHOT.jar &
