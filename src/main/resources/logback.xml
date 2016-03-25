@@ -12,10 +12,10 @@
 	<!-- 文件输出地 -->
 	<appender name="FILE"
 		class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<file>./logs/pushio_base.log</file>
+		<file>./logs/dpcms.log</file>
 
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<!-- 非当天的Log文件压缩备份为 log_zip_back/pushio_base.2014-08-10.zip -->
+			<!-- 非当天的Log文件压缩备份为 log_zip_back/dpcms.2014-08-10.zip -->
 			<fileNamePattern>log_zip_back/.%d{yyyy-MM-dd}.zip</fileNamePattern>
 			<!-- 超过30天的备份文件会被删除 -->
 			<maxHistory>30</maxHistory>
