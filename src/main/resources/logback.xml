@@ -30,7 +30,7 @@
 	<!-- 单独文件输出地 -->
 	<appender name="stand_alone_file"
 		class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<file>./logs/stand_alone/pushio_one.log</file>
+		<file>./logs/stand_alone/dpcms.log</file>
 
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
 			<!-- 非当天的Log文件压缩备份为 log_zip_back/pushio_base.2014-08-10.zip -->

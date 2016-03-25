@@ -14,7 +14,7 @@ import org.summer.dp.cms.shiro.DbRealm;
 
 @Configuration
 public class ShiroConfiguration {
-
+	
     @Bean
     public ShiroFilterFactoryBean shiroFilter() {
         ShiroFilterFactoryBean factoryBean = new ShiroFilterFactoryBean();
