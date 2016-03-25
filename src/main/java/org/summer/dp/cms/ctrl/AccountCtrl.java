@@ -3,7 +3,6 @@ package org.summer.dp.cms.ctrl;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
-import static org.elasticsearch.index.query.QueryBuilders
 import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -34,7 +33,6 @@ import org.summer.dp.cms.vo.CurrentInfo;
 @RestController
 @RequestMapping("/account")
 public class AccountCtrl extends BaseController{
-	org.elasticsearch.index.query.QueryBuilders
 	@Autowired private AccountService accountService;
 	@Autowired private EmployeeService employeeService;
 	@Autowired private StringRedisTemplate redisTemplate;//只有STRING 序列化成JSON用着先,等出稳定版 
