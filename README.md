@@ -25,5 +25,5 @@ http://codepen.io/collection/XExqGz/ 在线angular编辑需要翻墙
 
 http://www.runoob.com/angularjs/angularjs-tutorial.html 菜逼angular教程
 
-不吹逼交流群号:533823007
-ANGULARJS 指令封装中 。 。 。 。。
+不更新了，要新项目加190200560
+
